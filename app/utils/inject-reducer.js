@@ -4,7 +4,7 @@ import { ReactReduxContext } from 'react-redux';
 
 import getInjectors from './reducer-injectors';
 
-export default ({ key, reducer }) => WrappedComponent => {
+export default ({ key, reducer }) => (WrappedComponent) => {
   class ReducerInjector extends React.Component {
     static WrappedComponent = WrappedComponent;
 

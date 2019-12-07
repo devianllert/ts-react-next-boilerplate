@@ -82,7 +82,7 @@ export function Showcases(props) {
       <ShowcasesRow>
         {showcases &&
           showcases.length &&
-          showcases.map(item => (
+          showcases.map((item) => (
             <ShowcasesItem key={item.link}>
               <ImgSrc src={item.src} alt={item.title} />
 
