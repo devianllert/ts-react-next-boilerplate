@@ -1,0 +1,36 @@
+language: node_js
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+notifications:
+  email:
+    - jorgelca1205@gmail.com
+
+node_js:
+  - '8'
+  - '10'
+
+install:
+  - yarn
+
+jobs:
+  include:
+    - stage: dependencies
+      script:
+        - yarn
+
+    - stage: prettier
+      script:
+        - yarn prettier
+
+    - stage: lint
+      script:
+        - yarn lint
+
+after_success: 'yarn coveralls'
+
+branches:
+  only: master
